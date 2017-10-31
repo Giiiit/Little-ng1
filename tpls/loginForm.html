@@ -1,0 +1,46 @@
+ <div class="login-container">
+        <div class="box-container">
+            <div class="box-title row">
+                <div class="col-md-12 col-xs-12">
+                    <h2 class="text-center login-title">Admin</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <form class="form" role="form" name="loginForm" novalidate ng-controller="validateCtrl" >
+                        <!---用户名-->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                </div>
+                                <input class="form-control input" ng-model="user.name" name="name" type="text" placeholder="用户名" required>
+                                <span ng-show="loginForm.name.$dirty && loginForm.name.$invalid || loginForm.name.$valid">
+                                    <span ng-show="loginForm.name.$valid" class="glyphicon glyphicon-ok form-control-feedback text-success "></span>
+                                    <span  ng-show="loginForm.name.$error.name" class="glyphicon glyphicon-remove form-control-feedback text-danger"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <!---密码-->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-repeat"></span>
+                                </div>
+                                <input class="form-control input" type="password" name="password" placeholder="密码" ng-model="user.password" required>
+                                <span ng-show="loginForm.password.$dirty && loginForm.password.$invalid || loginForm.password.$valid">
+                                    <span class="glyphicon glyphicon-ok form-control-feedback text-success" ng-show="loginForm.password.$valid"></span>
+                                    <span class="glyphicon glyphicon-remove form-control-feedback text-danger" ng-show="loginForm.password.$dirty &&loginForm.password.$invalid "></span>
+                                 </span>
+                            </div>
+                        </div>
+                        <!---按钮-->
+                       <div class="form-group">
+                           <button type="submit" ui-sref="list({eq:0})" class="btn btn-block btn-info" ng-disabled="loginForm.$invalid" ng-click="compare(user)">登录</button>
+                       </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+ </div>

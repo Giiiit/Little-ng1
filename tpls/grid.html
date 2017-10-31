@@ -1,0 +1,21 @@
+<div ng-controller="listCtrl" class="bai">
+    <div class="row form-group">
+        <div class="col-md-1 ">
+            <a ui-sref="add" class="btn btn-success">新增</a>
+        </div>
+        <div class="col-md-5">
+            <input type="text" ng-model="filterOptions.filterText" placeholder="关键字..." class="form-control searchText"/>
+        </div>
+        <div class="col-md-1 ">
+            <a ui-sref="detail" class="btn btn-info">查看详情</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <div class="gridStyle" ng-grid="gridOptions">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
